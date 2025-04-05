@@ -6,7 +6,13 @@ import pandas as pd
 app = Flask(__name__)
 
 # Load the model
-model = joblib.load('best_model.pkl')
+#model = joblib.load('best_model.pkl')
+
+import os
+
+
+model_path = os.path.join(os.path.dirname(__file__), "best_model.pkl")
+model = joblib.load(model_path)
 #Load the scaler
 scaler = joblib.load('scaler.pkl') 
 
