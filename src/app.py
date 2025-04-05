@@ -14,7 +14,13 @@ import os
 model_path = os.path.join(os.path.dirname(__file__), "best_model.pkl")
 model = joblib.load(model_path)
 #Load the scaler
-scaler = joblib.load('scaler.pkl') 
+#scaler = joblib.load('scaler.pkl') 
+base_dir = os.path.dirname(__file__)  # directory of app.py
+
+scaler_path = os.path.join(base_dir, "scaler.pkl")
+
+
+scaler = joblib.load(scaler_path)
 
 @app.route('/')
 def home():
